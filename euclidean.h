@@ -6,7 +6,7 @@
 
 /* Many linear algebra packages exist, but I have found them
  * all to have some limitation or another in either arithmetic
- * operations or in assignment. The goal of vectorMath.h is to
+ * operations or in assignment. The goal of euclidean.h is to
  * alleviate both of these concerns. It should be noted that
  * capacity need not be explicitly assigned, as it will
  * automatically adjust to approximate the size. */
