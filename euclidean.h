@@ -42,9 +42,10 @@ double dot(oneForm vec1, oneForm vec2)
 
     if(vec1.size() != vec2.size())
     {
-        std::cerr << "The two provided vectors are of different dimensions and cannot be added! See std::vector<double> add(...) method in vectorMath.h" << std::endl;
+        std::cerr << "The two provided vectors are of different dimensions and cannot produce a scalar product in any mathematically meaningful way!" << std::endl;
         return 0;
     }
+    
     else
     {
         for (int i=0; i < (int)vec1.size(); i++)
@@ -74,8 +75,11 @@ twoForm outerProduct(oneForm columnVector, oneForm rowVector)
 // rather than taking an impossible cross product. These cross products are right-handed.
 oneForm rightCartesianCross(oneForm vec1, oneForm vec2)
 {
-    if(vec1.size() != 3 || vec2.size() != 3)
+    if(vec1.size() != vec2.size())
+    {
+        std::cerr << "The two provided vectors are of different dimensions and cannot produce a cross product in any mathematically meaningful way!" << std::endl;
         return vec1;
+    }
     else
     {
         oneForm rProduct;
@@ -90,10 +94,13 @@ oneForm rightCartesianCross(oneForm vec1, oneForm vec2)
 oneForm normalize(oneForm givenVector)
 {
     double sumOfSquares;
-    for(int i=0; i< (int)givenVector.size(); i++)
+    for(int i=0; i<= (int)givenVector.size(); i++)
     {
         sumOfSquares += givenVector[i] * givenVector[i];
-        givenVector[i] = givenVector[i] / sumOfSquares;
+    }
+    for(int i=0; i<= (int)givenVector.size(); i++)
+    {
+        givenVector[i] = givenVector[i] / sqrt(sumOfSquares);
     }
     return givenVector;
 }

@@ -13,7 +13,7 @@ int main()
 	oneForm resultAdd = add(testVector1, testVector2);
 	std::cout << "add: " << resultAdd[0] << ", " << resultAdd[1] << ", " << resultAdd[2] << std::endl;
 
-	oneForm resultNorm = normalize(testVector1);
+	oneForm resultNorm = normalize(testVector2);
 	std::cout << "normalize: " << resultNorm[0] << ", " << resultNorm[1] << ", " << resultNorm[2] << std::endl;
 
 	double dotP = dot(testVector1, testVector2);
@@ -50,8 +50,10 @@ int main()
 	twoForm testOutMatrix = echelonU(testInMatrix1);
 
 	std::cout << "3x3 Row Reduced: "<< "\t" << testOutMatrix[0][0] << ", " << testOutMatrix[1][0] << ", " <<  testOutMatrix[2][0] << std::endl 
-		<< "\t" << testOutMatrix[0][1] << ", " << testOutMatrix[1][1] << ", " << testOutMatrix[2][1] << std::endl 
-		<< "\t" << testOutMatrix[0][2] << ", " << testOutMatrix[1][2] << ", " << testOutMatrix[2][2] << std::endl;
+		<< "\t\t\t" << testOutMatrix[0][1] << ", " << testOutMatrix[1][1] << ", " << testOutMatrix[2][1] << std::endl 
+		<< "\t\t\t" << testOutMatrix[0][2] << ", " << testOutMatrix[1][2] << ", " << testOutMatrix[2][2] << std::endl;
+
+	std::cout << "size: " << testOutMatrix.size() << std::endl;
 
 	twoForm testInMatrix5;
 	testInMatrix5[0][0] = 1; testInMatrix5[1][0] = -2; testInMatrix5[2][0] = -4; testInMatrix5[3][0] = -3;
@@ -66,16 +68,16 @@ int main()
 	testInMatrix6[0][3] = -5; testInMatrix6[1][3] = -3; testInMatrix6[2][3] = 2; testInMatrix6[3][3] = 9;
 
 	std::cout << "4x4 In: "<< "\t" << testInMatrix6[0][0] << ", " << testInMatrix6[1][0] << ", " <<  testInMatrix6[2][0] << ", " << testInMatrix5[3][0] << std::endl 
-		<< "\t" << testInMatrix6[0][1] << ", " << testInMatrix6[1][1] << ", " << testInMatrix6[2][1] << ", " << testInMatrix6[3][1] << std::endl 
-		<< "\t" << testInMatrix6[0][2] << ", " << testInMatrix6[1][2] << ", " << testInMatrix6[2][2] << ", " << testInMatrix6[3][2] << std::endl
-		<< "\t" << testInMatrix6[0][3] << ", " << testInMatrix6[1][3] << ", " << testInMatrix6[2][3] << ", " << testInMatrix6[3][3] << std::endl;
+		<< "\t\t" << testInMatrix6[0][1] << ", " << testInMatrix6[1][1] << ", " << testInMatrix6[2][1] << ", " << testInMatrix6[3][1] << std::endl 
+		<< "\t\t" << testInMatrix6[0][2] << ", " << testInMatrix6[1][2] << ", " << testInMatrix6[2][2] << ", " << testInMatrix6[3][2] << std::endl
+		<< "\t\t" << testInMatrix6[0][3] << ", " << testInMatrix6[1][3] << ", " << testInMatrix6[2][3] << ", " << testInMatrix6[3][3] << std::endl;
 		
 	twoForm testOutMatrix4 = echelonU(testInMatrix6);
 
 	std::cout << "4x4 Row Reduced: "<< "\t" << testOutMatrix4[0][0] << ", " << testOutMatrix4[1][0] << ", " <<  testOutMatrix4[2][0] << ", " << testOutMatrix4[3][0] << std::endl 
-		<< "\t" << testOutMatrix4[0][1] << ", " << testOutMatrix4[1][1] << ", " << testOutMatrix4[2][1] << ", " << testOutMatrix4[3][1] << std::endl 
-		<< "\t" << testOutMatrix4[0][2] << ", " << testOutMatrix4[1][2] << ", " << testOutMatrix4[2][2] << ", " << testOutMatrix4[3][2] << std::endl
-		<< "\t" << testOutMatrix4[0][3] << ", " << testOutMatrix4[1][3] << ", " << testOutMatrix4[2][3] << ", " << testOutMatrix4[3][3] << std::endl;
+		<< "\t\t\t" << testOutMatrix4[0][1] << ", " << testOutMatrix4[1][1] << ", " << testOutMatrix4[2][1] << ", " << testOutMatrix4[3][1] << std::endl 
+		<< "\t\t\t" << testOutMatrix4[0][2] << ", " << testOutMatrix4[1][2] << ", " << testOutMatrix4[2][2] << ", " << testOutMatrix4[3][2] << std::endl
+		<< "\t\t\t" << testOutMatrix4[0][3] << ", " << testOutMatrix4[1][3] << ", " << testOutMatrix4[2][3] << ", " << testOutMatrix4[3][3] << std::endl;
 
 	return 0;
 }
